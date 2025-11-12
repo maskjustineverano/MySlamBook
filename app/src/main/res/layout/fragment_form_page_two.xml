@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/back_ground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FormPageTwoFragment">
@@ -29,15 +30,19 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="9"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/songName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
                         android:hint="Favorite Song"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -45,8 +50,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="@drawable/common_button"
                     android:text="Add"
+                    android:background="@drawable/common_button_black"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -71,10 +76,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:choiceMode="singleChoice"
-                    android:listSelector="@color/teal_200"
+                    android:listSelector="@color/text_primary"
                     android:nestedScrollingEnabled="true"
                     android:scrollbars="vertical"
                     android:textSize="12sp"
+                    android:background="@drawable/ol_btn"
+                    android:textColorHint="@color/black"
                     tools:ignore="NestedScrolling" />
 
             </LinearLayout>
@@ -90,15 +97,19 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="9"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/movieName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
                         android:hint="Favorite Movie"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -106,7 +117,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="@drawable/common_button"
+                    android:background="@drawable/common_button_black"
                     android:text="Add"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
@@ -133,10 +144,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:choiceMode="singleChoice"
-                    android:listSelector="@color/teal_200"
+                    android:listSelector="@color/text_primary"
                     android:nestedScrollingEnabled="true"
                     android:scrollbars="vertical"
                     android:textSize="12sp"
+                    android:background="@drawable/ol_btn"
+                    android:textColorHint="@color/black"
                     tools:ignore="NestedScrolling" />
             </LinearLayout>
 
@@ -151,15 +164,19 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="9"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/hobbies"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
                         android:hint="Favorite Movie"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -167,7 +184,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="@drawable/common_button"
+                    android:background="@drawable/common_button_black"
                     android:text="Add"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
@@ -193,10 +210,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:choiceMode="singleChoice"
-                    android:listSelector="@color/teal_200"
+                    android:listSelector="@color/text_primary"
                     android:nestedScrollingEnabled="true"
                     android:scrollbars="vertical"
                     android:textSize="12sp"
+                    android:background="@drawable/ol_btn"
+                    android:textColorHint="@color/black"
                     tools:ignore="NestedScrolling" />
 
             </LinearLayout>
@@ -212,15 +231,19 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="6"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/skill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
                         android:hint="Skills"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Spinner
@@ -229,6 +252,11 @@
                     android:layout_height="match_parent"
                     android:spinnerMode="dialog"
                     android:layout_weight="3"
+                    android:background="@drawable/ol_btn"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:entries="@array/skillRate" />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -236,7 +264,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="@drawable/common_button"
+                    android:background="@drawable/common_button_black"
                     android:text="Add"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
@@ -262,10 +290,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:choiceMode="singleChoice"
-                    android:listSelector="@color/teal_200"
+                    android:listSelector="@color/text_primary"
                     android:nestedScrollingEnabled="true"
                     android:scrollbars="vertical"
                     android:textSize="12sp"
+                    android:background="@drawable/ol_btn"
+                    android:textColorHint="@color/black"
                     tools:ignore="NestedScrolling" />
             </LinearLayout>
 
@@ -280,7 +310,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/teal_200"
+        android:background="@color/text_primary"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
@@ -291,7 +321,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/common_button"
+            android:background="@drawable/common_button_black"
             android:text="Back"
             android:textColor="@color/white" />
 
@@ -300,7 +330,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/common_button"
+            android:background="@drawable/common_button_black"
             android:text="Next"
             android:textColor="@color/white" />
 

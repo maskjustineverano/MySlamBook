@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/back_ground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FormPageOneFragment">
@@ -27,13 +28,17 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/nickName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         android:hint="Nickname"
                         android:inputType="text" />
 
@@ -42,14 +47,18 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/friendCall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
                         android:hint="Friend Call you as"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         android:inputType="text" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -57,13 +66,17 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/likeToCall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         android:hint="Like to Call me as"
                         android:inputType="text" />
 
@@ -74,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:text="FullName"
                     android:textAlignment="center"
-                    android:textColor="@color/primary"
+                    android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="italic" />
 
@@ -93,13 +106,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/lastName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         android:hint="Lastname"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -108,14 +125,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/firstName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
                         android:hint="Firstname"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -133,14 +154,14 @@
                     android:layout_height="wrap_content"
                     android:text="BirthDate"
                     android:textAlignment="center"
-                    android:textColor="@color/primary"
+                    android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="italic" />
 
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    app:dividerColor="@color/secondary" />
+                    app:dividerColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -148,6 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:textColorHint="@color/black"
                 android:weightSum="12">
 
                 <Spinner
@@ -155,6 +177,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="5"
+                    android:background="@drawable/ol_btn"
                     android:entries="@array/monthName"
                     android:nextFocusDown="@id/dateDay"
                     android:spinnerMode="dialog" />
@@ -165,6 +188,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:entries="@array/monthDay"
+                    android:background="@drawable/ol_btn"
                     android:nextFocusDown="@id/dateYear"
                     android:spinnerMode="dialog" />
 
@@ -172,15 +196,16 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/dateYear"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
                         android:hint="Year"
                         android:inputType="number"
+                        android:background="@drawable/ol_btn"
                         android:nextFocusDown="@id/gender" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -190,6 +215,8 @@
                 android:id="@+id/linear5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:textColor="@color/black"
                 android:orientation="vertical">
 
                 <Spinner
@@ -198,6 +225,11 @@
                     android:layout_height="48dp"
                     android:entries="@array/gender"
                     android:nextFocusDown="@id/status"
+                    android:textColor="@color/black"
+                    android:background="@drawable/ol_btn"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
                     android:spinnerMode="dialog" />
 
                 <Spinner
@@ -206,46 +238,62 @@
                     android:layout_height="48dp"
                     android:entries="@array/status"
                     android:nextFocusDown="@id/emailAdd"
+                    android:background="@drawable/ol_btn"
+                    android:textColorHint="@color/black"
                     android:spinnerMode="dialog" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/emailAdd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
                         android:hint="Email"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:background="@drawable/ol_btn"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         android:inputType="textEmailAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/contactNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/ol_btn"
                         android:hint="Contact Number"
-                        android:inputType="phone" />
+                        android:inputType="phone"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:textColor="@color/black"
+                        android:background="@drawable/ol_btn"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         android:gravity="start"
                         android:hint="Address"
                         android:inputType="textMultiLine"
@@ -264,7 +312,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/teal_200"
+        android:background="@color/text_primary"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
@@ -275,7 +323,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/common_button"
+            android:background="@drawable/common_button_black"
             android:text="Back"
             android:textColor="@color/white" />
 
@@ -284,7 +332,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/common_button"
+            android:background="@drawable/common_button_black"
             android:text="Next"
             android:textColor="@color/white" />
 

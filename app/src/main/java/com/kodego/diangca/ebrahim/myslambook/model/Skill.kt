@@ -1,4 +1,7 @@
 package com.kodego.diangca.ebrahim.myslambook.model
 
-class Skill(var skill:String = "", var rate:Int = 0) {
-}
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Skill(var skill: String = "", var rate: Int = 0) : Parcelable

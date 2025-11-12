@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.kodego.diangca.ebrahim.myslambook.databinding.RecycleViewSingleItemBinding
-import com.kodego.diangca.ebrahim.myslambook.model.Song
 
 class AdapterSong(var context: Context, var songs: ArrayList<Song>) :
 RecyclerView.Adapter<AdapterSong.SongViewHolder>(){
@@ -36,7 +35,7 @@ RecyclerView.Adapter<AdapterSong.SongViewHolder>(){
             if (view!=null)
                 Snackbar.make(
                     itemBinding.root,
-                    "${itemBinding.itemName}",
+                    "${itemBinding.itemName.text}",
                     Snackbar.LENGTH_SHORT
                 ).show()
         }
@@ -51,7 +50,7 @@ RecyclerView.Adapter<AdapterSong.SongViewHolder>(){
     private fun removeSong(itemBinding: RecycleViewSingleItemBinding, positionAdapter: Int) {
         var alertDialogBuilder = AlertDialog.Builder(context)
         alertDialogBuilder.setTitle("Delete?")
-        alertDialogBuilder.setMessage("Are you sure you want to delete ${songs[positionAdapter].songName}")
+        alertDialogBuilder.setMessage("Are you sure you want to delete ${songs[positionAdapter].songName}?")
         alertDialogBuilder.setNegativeButton("Cancel", null)
         alertDialogBuilder.setPositiveButton("Yes", object : DialogInterface.OnClickListener {
             override fun onClick(dialog: DialogInterface?, position: Int) {

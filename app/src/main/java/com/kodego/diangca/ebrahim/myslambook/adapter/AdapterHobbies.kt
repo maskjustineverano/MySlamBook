@@ -2,76 +2,63 @@ package com.kodego.diangca.ebrahim.myslambook.adapter
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.kodego.diangca.ebrahim.myslambook.databinding.RecycleViewSingleItemBinding
-import com.kodego.diangca.ebrahim.myslambook.model.Hobbies
-import com.kodego.diangca.ebrahim.myslambook.model.Movie
 
-class AdapterHobbies(var context: Context, var hobbies: ArrayList<Hobbies>) :
-RecyclerView.Adapter<AdapterHobbies.HobbiesViewHolder>(){
-
+class AdapterHobbies(private val context: Context, private var hobbies: ArrayList<String>) :
+    RecyclerView.Adapter<AdapterHobbies.HobbiesViewHolder>() {
 
     inner class HobbiesViewHolder(
-        private val context: Context,
         private val itemBinding: RecycleViewSingleItemBinding
-    ) :
-        RecyclerView.ViewHolder(itemBinding.root), View.OnClickListener {
+    ) : RecyclerView.ViewHolder(itemBinding.root), View.OnClickListener {
 
-        var hobbies = Hobbies()
-
-        fun bindStudent(hobbies : Hobbies) {
-            this.hobbies = hobbies
-            itemBinding.itemName.text = "${hobbies.hobbie}"
+        fun bindHobby(hobby: String) {
+            itemBinding.itemName.text = hobby
 
             itemBinding.btnRemove.setOnClickListener {
-                btnRemoveOnClickListener(itemBinding, adapterPosition)
+                btnRemoveOnClickListener(adapterPosition)
             }
         }
 
         override fun onClick(view: View?) {
-            if (view!=null)
+            if (view != null)
                 Snackbar.make(
                     itemBinding.root,
-                    "${itemBinding.itemName}",
+                    itemBinding.itemName.text,
                     Snackbar.LENGTH_SHORT
                 ).show()
         }
-
     }
 
-    private fun btnRemoveOnClickListener(itemBinding: RecycleViewSingleItemBinding, positionAdapter: Int) {
-
-        removeSong(itemBinding, positionAdapter)
+    private fun btnRemoveOnClickListener(position: Int) {
+        removeHobby(position)
     }
 
-    private fun removeSong(itemBinding: RecycleViewSingleItemBinding, positionAdapter: Int) {
-        var alertDialogBuilder = AlertDialog.Builder(context)
+    private fun removeHobby(position: Int) {
+        val alertDialogBuilder = AlertDialog.Builder(context)
         alertDialogBuilder.setTitle("Delete?")
-        alertDialogBuilder.setMessage("Are you sure you want to delete ${hobbies[positionAdapter].hobbie}")
+        alertDialogBuilder.setMessage("Are you sure you want to delete ${hobbies[position]}?")
         alertDialogBuilder.setNegativeButton("Cancel", null)
-        alertDialogBuilder.setPositiveButton("Yes", object : DialogInterface.OnClickListener {
-            override fun onClick(dialog: DialogInterface?, position: Int) {
-                hobbies.removeAt(positionAdapter)
-                notifyItemRemoved(positionAdapter);
-                notifyItemRangeChanged(positionAdapter, itemCount);
-                Snackbar.make(
-                    itemBinding.root,
-                    "Song has been successfully removed.",
-                    Snackbar.LENGTH_SHORT
-                ).show()
-            }
-        }).show()
+        alertDialogBuilder.setPositiveButton("Yes") { _, _ ->
+            hobbies.removeAt(position)
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, itemCount)
+            Snackbar.make(
+                itemView, // Assuming itemView is accessible here, otherwise pass the view
+                "Hobby has been successfully removed.",
+                Snackbar.LENGTH_SHORT
+            ).show()
+        }.show()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HobbiesViewHolder {
         val itemBinding =
             RecycleViewSingleItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return HobbiesViewHolder(context, itemBinding)
+        return HobbiesViewHolder(itemBinding)
     }
 
     override fun getItemCount(): Int {
@@ -79,6 +66,9 @@ RecyclerView.Adapter<AdapterHobbies.HobbiesViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: HobbiesViewHolder, position: Int) {
-        holder.bindStudent(hobbies[position])
+        holder.bindHobby(hobbies[position])
     }
+
+    private val itemView: View
+        get() = View(context)
 }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_marginTop="2dp"
     android:layout_marginBottom="2dp"
+    app:cardBackgroundColor="@drawable/back_ground"
     android:layout_height="30dp">
 
     <LinearLayout
@@ -19,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:textSize="14sp"
-            android:textColor="@color/primary"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:text="Item"/>
 
@@ -28,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:background="@drawable/danger_button"
+            android:background="@drawable/common_button_black"
             android:text="Delete"
             android:textColor="@color/white"
             android:textSize="12sp" />

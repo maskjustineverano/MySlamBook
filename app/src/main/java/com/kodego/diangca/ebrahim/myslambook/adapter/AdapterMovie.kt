@@ -1,31 +1,27 @@
 package com.kodego.diangca.ebrahim.myslambook.adapter
 
+import Movie
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.kodego.diangca.ebrahim.myslambook.databinding.RecycleViewSingleItemBinding
-import com.kodego.diangca.ebrahim.myslambook.model.Movie
 
 class AdapterMovie(var context: Context, var movie: ArrayList<Movie>) :
-RecyclerView.Adapter<AdapterMovie.MovieViewHolder>(){
+    RecyclerView.Adapter<AdapterMovie.MovieViewHolder>() {
 
 
     inner class MovieViewHolder(
-        private val context: Context,
         private val itemBinding: RecycleViewSingleItemBinding
     ) :
         RecyclerView.ViewHolder(itemBinding.root), View.OnClickListener {
 
-        var movie = Movie()
 
         fun bindStudent(movie: Movie) {
-            this.movie = movie
-            itemBinding.itemName.text = "${movie.movieName}"
+            itemBinding.itemName.text = movie.title
 
             itemBinding.btnRemove.setOnClickListener {
                 btnRemoveOnClickListener(itemBinding, adapterPosition)
@@ -33,44 +29,46 @@ RecyclerView.Adapter<AdapterMovie.MovieViewHolder>(){
         }
 
         override fun onClick(view: View?) {
-            if (view!=null)
+            if (view != null)
                 Snackbar.make(
                     itemBinding.root,
-                    "${itemBinding.itemName}",
+                    itemBinding.itemName.text,
                     Snackbar.LENGTH_SHORT
                 ).show()
         }
 
     }
 
-    private fun btnRemoveOnClickListener(itemBinding: RecycleViewSingleItemBinding, positionAdapter: Int) {
+    private fun btnRemoveOnClickListener(
+        itemBinding: RecycleViewSingleItemBinding,
+        positionAdapter: Int
+    ) {
 
         removeSong(itemBinding, positionAdapter)
     }
 
     private fun removeSong(itemBinding: RecycleViewSingleItemBinding, positionAdapter: Int) {
-        var alertDialogBuilder = AlertDialog.Builder(context)
-        alertDialogBuilder.setTitle("Delete?")
-        alertDialogBuilder.setMessage("Are you sure you want to delete ${movie[positionAdapter].movieName}")
-        alertDialogBuilder.setNegativeButton("Cancel", null)
-        alertDialogBuilder.setPositiveButton("Yes", object : DialogInterface.OnClickListener {
-            override fun onClick(dialog: DialogInterface?, position: Int) {
+        AlertDialog.Builder(context)
+            .setTitle("Delete?")
+            .setMessage("Are you sure you want to delete ${movie[positionAdapter].title}?")
+            .setNegativeButton("Cancel", null)
+            .setPositiveButton("Yes") { _, _ ->
                 movie.removeAt(positionAdapter)
-                notifyItemRemoved(positionAdapter);
-                notifyItemRangeChanged(positionAdapter, itemCount);
+                notifyItemRemoved(positionAdapter)
+                notifyItemRangeChanged(positionAdapter, itemCount)
                 Snackbar.make(
                     itemBinding.root,
-                    "Song has been successfully removed.",
+                    "Movie has been successfully removed.",
                     Snackbar.LENGTH_SHORT
                 ).show()
             }
-        }).show()
+            .show()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val itemBinding =
             RecycleViewSingleItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MovieViewHolder(context, itemBinding)
+        return MovieViewHolder(itemBinding)
     }
 
     override fun getItemCount(): Int {

@@ -2,14 +2,17 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="30dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    app:cardBackgroundColor="@drawable/back_ground">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
+        android:padding="4dp"
         android:weightSum="12">
 
         <TextView
@@ -18,9 +21,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="8"
             android:text="Item"
-            android:textColor="@color/primary"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/itemRate"
             android:layout_width="0dp"
@@ -28,7 +32,7 @@
             android:layout_weight="2"
             android:text="Rate"
             android:textAlignment="center"
-            android:textColor="@color/primary"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -37,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:background="@drawable/danger_button"
+            android:background="@drawable/common_button_black"
             android:text="Delete"
             android:textColor="@color/white"
             android:textSize="12sp" />
